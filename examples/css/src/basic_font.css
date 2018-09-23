@@ -1,0 +1,68 @@
+/*@import url('https://fonts.googleapis.com/css?family=Hi+Melody|Lato|Permanent+Marker&subset=korean');
+*/
+/* basic_font_01.css */
+
+:root{font-size: 16px;}
+
+.font_01 {
+  padding: 1rem; background-color: #bdf;
+  font-size: 1rem;
+  font-family: "myriad pro", arial, nanumGothic, dotum, sans-serif;
+}
+
+/* 디자인, 사용서체가 웹상에서 써야하기 때문에 내 컴퓨터를 기준으로 작성하는 것은 아니다
+  1 웹폰트를 사용할 것을 권장
+  2 강제로 웹폰트를 만들자
+  3 포토샵/일러스트(그래픽프로그램)을 통한 이미지 서체 만들기
+  */
+
+  .font_02 {
+  padding: 1rem; background-color: #b9f;
+  font-size: 1rem;
+  font-family: 'Permanent Marker', 'Hi Melody', cursive;
+  font-weight: 100;
+}
+
+/* font-weight : ragular; (기본 굵기 - 400)
+                 this - 100
+                 right - 200 
+                 bood - 600, border, exrtablod - 900
+*/
+
+  .font_03 {
+  padding: 1rem; background-color: #dfb;
+  font-size: 1.2rem; font-family: 'East Sea Dokdo';
+}
+
+
+  .font_04 {
+    padding: 1rem; background-color: #f7c;
+    color: #fff;
+    /*글씨 간격*/letter-spacing: 0.025rem;
+    /*단어와 단어 사이 간격*/word-spacing: -0.35rem;
+    /*행간*/line-height: 1.5;
+    /*기울기*/font-style: italic /*normal*/;
+    /*대소문자변환*/text-transform: /*capitalize(첫글자만 대문자)*/ /*lowercase(소문자)*/ uppercase;
+    /*정렬*/text-align: justify/*(양쪽정렬)*/; /*right, left*/ /*center*/
+    /*장평*/font-stretch: /*ultra-expanded*/ /*ultra-condensed*/;
+  }
+
+
+  .of {
+    background-color: #0af;
+    margin-bottom: 50rem;
+  }
+
+  .of > p {
+    width: 200px; background-color: #fa0;
+    white-space: nowrap/*(줄바꿈을 하지 않겠다)*/;
+    overflow: hidden;
+    text-overflow: ellipsis; /*넘치는 글자에 대해서는 말줄임표를 사용한다*/
+  }
+
+/* font 설정시 축약 방법*/
+/* font: 기울임 굵기 서체크기/행간 서체명, 서체명, 서체명...;*/
+
+#wrap > p {font: italic bold 2rem/200% 'myriad pro', arial, 'nanumGothic', sans-serif;}
+#wrap > p::first-line{color: #f06;}
+#wrap > p::first-letter{font-size:5rem;}
