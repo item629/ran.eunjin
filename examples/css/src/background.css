@@ -1,0 +1,89 @@
+/* background_02.css */
+
+.wrap {margin: auto; width: 960px; height: auto; background-color: #fafafa;}
+h1 {background-color: #04f; color: #fff; text-align: center; font-size: 1.7rem;}
+
+.icons, .icons2 {box-sizing: border-box; padding: 0.5rem; width: 100%; height: auto;}
+.icons:after, icons::after, .icons2:after, icons::after {content: " "; display: block; width: 100%; height: 0; clear: both;}
+.icons > li, .icons2 > li {margin: 1rem; float: left; width: 56px; height: 56px; border: 2px solid #777;}
+/*.icons > li > a > span {display: block; width: 0; height: 0; overflow: hidden;}
+  .icons > li > a > {display: block; width: 100%; height: 100%;} */
+.icons > li > a, .icons2 > li > a {background-repeat: no-repeat;
+	             	 /*background-position: -30px -34px;*/
+	             	 transition: all 800ms ease;
+	               background-image: url("../../img/background_test/market.png");}
+/*.icons > li > a:hover {background-position: -146px -158px;}*/
+
+.icons > li:nth-child(1) > a {background-position: -31px -34px;}
+.icons > li:nth-child(1) > a:hover {background-position: -30px -158px;}
+.icons > li:nth-child(2) > a {background-position: -146px -35px;}
+.icons > li:nth-child(2) > a:hover {background-position: -146px -158px;}
+.icons > li:nth-child(3) > a {background-position: -262px -35px;}
+.icons > li:nth-child(3) > a:hover {background-position: -262px -158px;}
+.icons > li:nth-child(4) > a {background-position: -378px -35px;}
+.icons > li:nth-child(4) > a:hover {background-position: -378px -158px;}
+.icons > li:nth-child(5) > a {background-position: -494px -35px;}
+.icons > li:nth-child(5) > a:hover {background-position: -494px -158px;}
+.icons > li:nth-child(6) > a {background-position: -610px -35px;}
+.icons > li:nth-child(6) > a:hover {background-position: -610px -158px;}
+.icons > li:nth-child(7) > a {background-position: -726px -35px;}
+.icons > li:nth-child(7) > a:hover {background-position: -726px -158px;}
+.icons > li:nth-child(8) > a {background-position: -30px -35px;}
+.icons > li:nth-child(8) > a:hover {background-position: -30px -158px;}
+
+.icons2 {border-top: 1px dotted #000;}
+.icons2 > li {width: 64px; height: 64px;}
+.icons2 > li > a {transition: all ease; background-image: url("../../img/background_test/consDay.png");}
+
+.icons2 > li:nth-child(1) > a {background-position: -29px -22px;}
+.icons2 > li:nth-child(1) > a:hover {background-position: -29px -587px;}
+.icons2 > li:nth-child(2) > a {background-position: -249px -132px;}
+.icons2 > li:nth-child(2) > a:hover {background-position: -249px -696px;}
+.icons2 > li:nth-child(3) > a {background-position: -470px -242px;}
+.icons2 > li:nth-child(3) > a:hover {background-position: -470px -807px;}
+.icons2 > li:nth-child(4) > a {background-position: -800px -354px;}
+.icons2 > li:nth-child(4) > a:hover {background-position: -800px -920px;}
+.icons2 > li:nth-child(5) > a {background-position: -1019px -462px;}
+.icons2 > li:nth-child(5) > a:hover {background-position: -1019px -1026px;}
+
+
+a:focus,
+button:focus,
+input:focus,
+texr-rea:focus,
+select:focus{outline: 2px solid #f06; position: relative; z-index: 1000;}
+
+
+/* --------------------------------------------------------------------------------------
+---*/
+
+.linear .radial {width: 100%; height: auto; margin-bottom: 1rem;
+background-color: #ffc;}
+.linear > h2 , .radial > h2 {background-color: #fa0; text-align: center;
+	                           padding-bottom: 1rem; color: #fff; text-transform: uppercase;}
+.linear li, .radial li {width: 100%; height :200px; background-color: #aaa; margin-bottom: 1rem;}
+
+.linear li:first-child {background-color: #f06;
+	                      background-image: linear-gradient(#ff0, #0ad, #f06);}
+.linear li:nth-child(2) {background-color: #f06;
+	                       background-image: linear-gradient(56deg, #ff0, #0ad 20%, #f06 50%);
+	                     	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=56, sratrColorstr);}
+.linear li:last-child {background-color: #f06;
+	                     background-image: linear-gradient(56deg, rgba(255,255,10,0.5) 20%, #0ad 20%, #f06 50%);}
+
+.radial li:first-child {background-color: #f06;
+	                      background-image: radial-gradient(/*ellipse closest-side*/ #ff5, #0ad, #f06);}
+.radial li:nth-child(2) {background-color: #f06;
+	                       background-image: radial-gradient(circle, #ff5, #0ad, #f06);}
+.radial li:last-child {background-color: #f06;
+	                     background-image: radial-gradient(circle at 50% 0, #0ad 20%, #f06 50%);}
+
+
+.gradient_hover {width: 100%; height: 300px; 
+	               background-color: #0af; 
+	               background-image: linear-gradient(65deg, #fa0 10%, rgba(0,0,0,0));
+	             	 transition: all 600ms ease;}
+
+.gradient_hover:hover {
+	               background-color: #f0a; 	
+	               background-image: linear-gradient(65deg, #fa0 10%, rgba(0,0,0,0));}
