@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- basic_video_fullpage.html-->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- meta:vp -->
+  <meta name="viewport" 
+  content="width=device-width, user-scalable=no, 
+  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--import css-->
+  <!-- reset -->
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/src/basic_video_fullpage.css" />
+
+  <title>Video Fullpage</title>
+</head>
+<body>
+  <!-- layout -->
+  <div class="wrap">
+    <hgroup class="title">
+      <h1> video를 화면 전체에 나타나게 만들기 </h1>
+      <h2> video 내용이 반응형에서도 돌아가게 만들어보기</h2>
+    </hgroup>
+    <div class="fullVideo">
+      <video autoplay="autoplay" loop="loop" muted="muted" controls="controls">
+        <source src="../media/video/TAEMIN-MOVE.mp4" type="video/mp4">
+          <p> 사용하고계신 브라우저는 비디오를 지원하지 않습니다.
+            <a href="http://www.google.com/chrome"> 권장 브라우저 바로가기 </a></p>
+      </video>
+    </div>
+  </div>
+
+
+  <!--javascript-->
+  <script src="../js/base/jquery-3.3.1.min.js"></script>
+  <script src="../js/base/jquery-ui.min.js"></script>
+</body>
+</html>
