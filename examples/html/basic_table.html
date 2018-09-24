@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- basic_table.html-->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- meta:vp -->
+  <meta name="viewport" 
+  content="width=device-width, user-scalable=no, 
+  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--import css-->
+  <!-- reset -->
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/src/basic_table_01.css" />
+
+  <title>table 01</title>
+  <style type="text/css">
+    table, th, td{border: 1px solid #777; border-spacing: 0;
+      border-collapse: collapse;}
+    table{width: 800px; height: 600px;}
+    thead{background-color: #ac0;}
+    thead>tr{height: 100px;}
+    tbody{background-color: #fcc;}
+    tfoot{background-color: #acc;}
+    tfoot>tr{height: 100px;}
+
+    .table_on {
+      width: 100px;
+    }
+
+    .table_two {
+      width: 200px;
+    }
+
+    .table_four {
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <!-- layout -->
+  <h1>table 01</h1>
+  <table summary="2018년 6월 29일 표에 대한 내용을 작성 및 기초 이해하기 편">
+    <caption>테이블의 제목을 작성하는 곳
+      <span class="hidden">2018년 6월 29일 표에 대한 내용을 작성 및 기초 이해하기 편</span>
+    </caption>
+    <!--  -->
+    <colgroup>
+      <col class="table_one">
+      <col class="table_two">
+      <col />
+      <col class="table_four"> 
+    </colgroup>
+    <!--  -->
+
+    <thead>
+      <tr>
+        <th> 셀 작성 1 </th>
+        <th> 셀 작성 2 </th>
+        <th> 셀 작성 3 </th>
+        <th> 셀 작성 4 </th>
+      </tr>
+    </thead> <!-- // #thead -->
+
+    <tfoot>
+      <tr>
+        <td> 그래서1 </td>
+        <td> 그래서2 </td>
+        <td> 그래서3 </td>
+        <td> 그래서4 </td>
+      </tr>
+    </tfoot> <!-- // #tfoot -->
+
+    <tbody>
+      <tr>
+        <td colspan="2"> 셀 작성 1 </td>
+        <td> 셀 작성 3 </td>
+        <td> 셀 작성 4 </td>
+      </tr>                 <!-- // #1 -->
+      <tr>
+        <td rowspan="2"> 셀 작성 1 </td>
+        <td> 셀 작성 2 </td>
+        <td> 셀 작성 3 </td>
+        <td> 셀 작성 4 </td>
+      </tr>                 <!-- // #2 -->
+      <tr>
+        <td> 셀 작성 2 </td>
+        <td colspan="2" rowspan="3"> 셀 작성 3 </td>
+      </tr>                 <!-- // #3 -->
+      <tr>
+        <td> 셀 작성 1 </td>
+        <td> 셀 작성 2 </td>
+      </tr>                 <!-- // #4 -->
+      <tr>
+        <td> 셀 작성 1 </td>
+        <td> 셀 작성 2 </td>
+      </tr>                 <!-- // #5 -->
+    </tbody> <!-- // #tbody -->
+
+
+  </table> <!-- // #table -->
+
+  <!--javascript-->
+  <script src="../js/base/jquery-3.3.1.min.js"></script>
+  <script src="../js/base/jquery-ui.min.js"></script>
+</body>
+</html>
