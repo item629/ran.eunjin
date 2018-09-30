@@ -57,6 +57,7 @@ super, switch, this, throw, try, typeof, var, void, while, with, yueld
 
 * 앞으로 예약어로 채택될 가능성이 있는 키워드(enum, await 등)
 * JavaScript에서 이미 정의된 객체나 그 멤버명(String, eval 등)
+<br/><br/>
 
 ###읽기 쉬운 코드를 위해
 명명 규칙에는 없으나 더욱 읽기 쉬운 코드를 작성하기 위한 관섬에서 다음의 여섯 가자 사항을 유의해두면 좋을 것이다.
