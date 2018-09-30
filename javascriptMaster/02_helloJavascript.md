@@ -42,13 +42,21 @@ window.alert('안녕하세요, 자바스크립트!');
 
 
 ### *외부 스크립트와 인라인 스크립트를 병용하는 경우에 주의할 점
-src 속성을 지정한 경우 <`script`> 요소 안의 콘텐츠는 무시되기 때문이다. 만일 외부 스크립트와 인라인 스크립트를 병용할 경우에는 아래와 같이 <`script`>요소를 분이할 필요가 있다.
+src 속성을 지정한 경우 <`script`> 요소 안의 콘텐츠는 무시되기 때문이다. 만일 외부 스크립트와 인라인 스크립트를 병용할 경우에는 아래와 같이 <`script`>요소를 분리할 필요가 있다.
 
 ~~~
 <script type="text/Javascript" src="lib.js">
 window.alert('안녕하세요, 자바스크립트!'); //무시된다
 </script>
 ~~~
+
+~~~
+<script type="text/Javascript" src="lib.js"></script>
+<script type="text/Javascript">
+window.alert('안녕하세요, 자바스크립트!');
+</script>
+~~~
+
 <br/><br/>
 ## Anchor 태그에 스크립트 집어넣기
 <`script`> 요소에 기술을 더하는 것 이외에도 Anchor 태그의 href 속성에 'Javascript:~'의 형식으로 스크립트를 집어넣을 수도 있다. 이런 기법을 JavaScript 의사 프로토콜이라고 한다.
