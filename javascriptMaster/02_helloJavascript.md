@@ -1,4 +1,4 @@
-#01. Javascript의 기본적인 표기
+01. Javascript의 기본적인 표기
 ---
 <br/>
 ## Javascript로 "안녕하세요, 자바스크립트!" 표기하기
