@@ -1,5 +1,7 @@
-Javascript의 기본적인 표기
+#Javascript의 기본적인 표기
 ---
+
+
 
 ## Javascript로 "안녕하세요, 자바스크립트!" 표기하기
 ~~~
