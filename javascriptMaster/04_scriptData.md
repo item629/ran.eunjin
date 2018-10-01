@@ -36,6 +36,11 @@ Javascript의 주요 데이터형
 
 ~~~
 window.alert('안녕하세요, Javascript!\n열심히 공부합시다.');
+
+=>
+
+안녕하세요, Javascript!
+열심히 공부합시다.
 ~~~
 
 <br/><br/>
