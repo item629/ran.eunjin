@@ -21,17 +21,17 @@ Javascript의 주요 데이터형
 <br/><br/>
 ## 문자열 리터럴 주요 이스케이프 시퀀스
 
-- \b : 백스페이스
-- \f : 새로운 페이지
-- \n : 개행(LF: Line Feed)
-- \r : 복귀(CR: Carriage Return)
-- \t : 탭문자
-- \\ : \마크
-- \' : 작은따옴표
-- \" : 큰따옴표
-- \xXX : Latin-1 문자(XX는 진수) 예: \x61 (a)
-- \uXXXX : Unicode 문자(XXXX는 16진수) 예 \uC815 (정)
-- \u{XXXXX} : 0xffff (4개의 16진수)을 넘는 Unicode 문자. 예: \u{20b9f}
+- `\b` : 백스페이스
+- `\f` : 새로운 페이지
+- `\n` : 개행(LF: Line Feed)
+- `\r` : 복귀(CR: Carriage Return)
+- `\t` : 탭문자
+- `\\` : \마크
+- `\'` : 작은따옴표
+- `\"` : 큰따옴표
+- `\xXX` : Latin-1 문자(XX는 진수) 예: \x61 (a)
+- `\uXXXX` : Unicode 문자(XXXX는 16진수) 예 \uC815 (정)
+- `\u{XXXXX}` : 0xffff (4개의 16진수)을 넘는 Unicode 문자. 예: \u{20b9f}
 
 
 ~~~
