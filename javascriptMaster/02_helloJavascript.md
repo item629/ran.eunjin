@@ -1,6 +1,5 @@
 
-Javascript로 "안녕하세요, 자바스크립트!" 표기하기
----
+# Javascript로 "안녕하세요, 자바스크립트!" 표기하기
 ~~~
 <!DOCTYPE html>
 <html>
