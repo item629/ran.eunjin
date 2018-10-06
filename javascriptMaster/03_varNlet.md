@@ -50,7 +50,7 @@ else, export, extends
 finally, for, function
 if, import, implements*, in, instanceof, interface*
 new, pakage*, private*, protected*, public*, return
-super, switch, this, throw, try, typeof, var, void, while, with, yueld
+super, switch, this, throw, try, typeof, var, void, while, with, yield
 ~~~
 
 또 아래와 같은 상황에서도 식별자로 사용하는 것을 피해야한다.
