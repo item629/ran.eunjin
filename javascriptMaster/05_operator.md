@@ -232,7 +232,7 @@ console.log(memo); // 결과 : 없음
 중첩된 객체를 확장하려면 객체의 중첩 관계를 알 수 있도록 대입할 대상의 변수도 `{..}`로 중첩 구조를 나타낸다.
 
 ```javascript
-ㅣet book = { title : 'Java포켓 레퍼런스', publish: '기술평론사', price: 26800, 
+let book = { title : 'Java포켓 레퍼런스', publish: '기술평론사', price: 26800, 
 	other : { keywd: 'Java SE 8', logo: 'logo.jpg' } };
 let { title, other, other: { keywd } } = book;
 
