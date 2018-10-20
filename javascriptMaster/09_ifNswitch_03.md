@@ -38,6 +38,7 @@ for ( var key in data ) {
 } // 결과 : 'apple''orange''banana'를 순서대로 출력
 ```
 
+<br/>
 배열의 내용이 순서대로 출력되어 그냥 보기에는 올바른 동작으로 보인다. 그러나 다음과 같은 코드에서는 어떨까?
 
 ```javascript
@@ -68,6 +69,8 @@ for ( var i = 0; len = data.length; i < len; i++ ) {
 >이곳의 주제와는 벗어나지만 초기화 식에서 배열의 사이즈(data.length)를 취득하고 있다는 점에 주목해보자. <br/>
 >두번째 줄의 코드는 다음과 같이 작성해도 동작한다.
 
+<br/>
+
 ```javascript
 for ( var i = 0; i < data.length; i++ ) {...}
 ```
@@ -78,4 +81,20 @@ for ( var i = 0; i < data.length; i++ ) {...}
 <br/><br/>
 
 ## 배열 등을 순서대로 처리하기 - for...of 명령
-배열 등을 순서대로 열거하기 위한 또 하나의 수단으로, ES2015에서 추가된 `for...of` 명령이 있다. '배열 등'이라는 표현을 썼는데, 이렇게 표현한 이유는 `for...of` 명령에서는 배열뿐만 아니라 Array와 같은 객체(NodeList, arguments 등), 반복자/생성자 등도 처리할 수 있기 때문이다.
+배열 등을 순서대로 열거하기 위한 또 하나의 수단으로, ES2015에서 추가된 `for...of` 명령이 있다. '배열 등'이라는 표현을 썼는데, 이렇게 표현한 이유는 `for...of` 명령에서는 배열뿐만 아니라 Array와 같은 객체(NodeList, arguments 등), 반복자/생성자 등도 처리할 수 있기 때문이다. 이를 모두 통틀어서 **열거 가능한 객체** 라고도 부른다.
+
+```javascript
+for ( 가변수 of 열거 가능한 객체 ) {
+	루프 내에서 실행하는 명령(군)
+}
+```
+구문은 `for..in` 명령과 거의 같으므로 곧바로 구체적인 예를 살펴보자.
+<br/>
+```javascript
+var data = [ 'apple', 'orange', 'banana' ];
+Array.prototype.hoge = function () {}
+for ( var value of data ) {
+	console.log(value);
+} // 결과 : 'apple''orange''banana'를 순서대로 출력
+```
+
