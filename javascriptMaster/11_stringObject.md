@@ -84,7 +84,7 @@ console.log(str2.slice(5, 8)); // 결과 : 프로젝 (6-8번째 문자를 추출
 console.log(str2.substring(5, 8)); // 결과 : 프로젝 (6-8번째 문자를 추출)
 console.log(str2.substr(5, 3)); // 결과 : 프로젝 (6번째 문자부터 3문자를 추출)
 console.log(str2.split('s')); // 결과 : ["Wing", "프로젝트"]
-console.log(str.1.split('에', 3)); // 결과 : ["뜰", " 뜰", " 뜰"] (3개로 분할)
+console.log(str1.split('에', 3)); // 결과 : ["뜰", " 뜰", " 뜰"] (3개로 분할)
 console.log(str2.charCodeAt(0)); // 결과 : 87
 console.log(String.fromCharCode(87, 105, 110, 103)); // 결과 : Wing
 console.log(str3.codePointAt(0)); // 결과 : 128169
