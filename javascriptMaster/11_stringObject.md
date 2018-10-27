@@ -70,5 +70,30 @@ console.log(str1.indexOf('뜰')); // 결과 : 0 (선두에서부터 검색)
 console.log(str1.lastIndexOf('뜰')); // 결과 : 6 (뒤에서부터 검색)
 console.log(str1.indexOf('뜰', 3)); // 결과 : 3 (4번째 문자부터 오른쪽 방향 검색)
 console.log(str1.lastIndexOf('에', 5)); // 결과 : 4 (6번째 문자부터 왼쪽 방향 검색)
+console.log(str1.indexOf('가든')); // 결과 : -1 (불일치)
+console.log(str1.startsWith('뜰')); // 결과 : true
+console.log(str1.endsWith('뜰')); // 결과 : false
+console.log(str1.includes('뜰')); // 결과 : true
 
+var.str2 = 'Wings프로젝트';
+var str3 = '💩싸서'; 
+var str4 = '	wings	';
+
+console.log(str2.charAt(4)); // 결과 : s (5번째 문자를 추출)
+console.log(str2.slice(5, 8)); // 결과 : 프로젝 (6-8번째 문자를 추출)
+console.log(str2.substring(5, 8)); // 결과 : 프로젝 (6-8번째 문자를 추출)
+console.log(str2.substr(5, 3)); // 결과 : 프로젝 (6번째 문자부터 3문자를 추출)
+console.log(str2.split('s')); // 결과 : ["Wing", "프로젝트"]
+console.log(str.1.split('에', 3)); // 결과 : ["뜰", " 뜰", " 뜰"] (3개로 분할)
+console.log(str2.charCodeAt(0)); // 결과 : 87
+console.log(String.fromCharCode(87, 105, 110, 103)); // 결과 : Wing
+console.log(str3.codePointAt(0)); // 결과 : 128169
+console.log(String.fromCodePoint(128169)); // 결과 : 💩
+console.log(str2.concat(' 유한회사')); // 결과 : Wings프로젝트 유한회사
+console.log(str2.repeat(2)); // 결과 : Wings프로젝트 Wings프로젝트
+console.log(str2.trim()); // 결과 : wings
+console.log(str2.length); // 결과 : 9(한국어도 1문자로 계산)
 ```
+이렇듯 String 객체의 멤버는 거의 대부분 이해할 수 있는 것들이다.
+
+
