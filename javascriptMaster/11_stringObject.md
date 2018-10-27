@@ -60,3 +60,15 @@ String 객체에서 이용 가능한 주요 멤버는 다음의 표와 같다.
 |length| 문자열의 길이를 취득 |
 
 ![Open in browser](./img/strings.jpeg)
+
+<br/><br/>
+다음은 구체적인 운용 예를 살펴보자.
+
+```javascript
+var srt1 = '뜰에 뜰에 뜰에는 닭이 있다.';
+console.log(str1.indexOf('뜰')); // 결과 : 0 (선두에서부터 검색)
+console.log(str1.lastIndexOf('뜰')); // 결과 : 6 (뒤에서부터 검색)
+console.log(str1.indexOf('뜰', 3)); // 결과 : 3 (4번째 문자부터 오른쪽 방향 검색)
+console.log(str1.lastIndexOf('에', 5)); // 결과 : 4 (6번째 문자부터 왼쪽 방향 검색)
+
+```
