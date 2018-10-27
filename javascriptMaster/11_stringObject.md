@@ -118,3 +118,44 @@ console.log(str.substring(8, 5)); // 프로젝 (6-8번째 문자열을 추출)
 console.log(str.slice(8, 5)); // 공백 문자열
 ```
 
+2. 인수 start/end에 음수를 지정한 경우
+
+>이 경우에 substring 메소드는 무조건 0으로 인식하지만 slice 메소드는 '문자열 끝에서부터의 문자수'로 인식한다.
+
+```javascript
+var str = 'WINGS프로젝트';
+console.log(str.substring(5, -2)); // WINGS (1-5번째 문자열을 추출)
+console.log(str.slice(5, -2); //  프로 (6-7번쨰 문자열을 추출)
+```
+>이 경우에 substring 메소드는 -2를 0으로 간주하므로 'str.substring(5, -2)'는 'ste.substring(5, 0)'과 동일하다. 게다가 1에서의 규칙을 따라 인수 start>end의 경우는 인수를 바꾸는 것으로 판단하므로 'str.substring(0, 5)'로 인지된다.<br/>
+>반면에 slice 메소드는 음수를 뒤로부터의 문자수로 인지한다. 즉 -2는 뒤로부터 3번째(즉, 7번째 문자)로 판단하여 'str.slice(5, -2)'는 'str.slice(5, 7)'와 같은 동작을 하게 된다.
+
+
+<br/><br/>
+
+## 서로게이트 페어(surrogate Pair) 문자의 길이 카운트하기
+**서로 게이트 페어** (Surrogate Pair) 문자의 경우, 16비트 코드 두 개를 사용하여 문자 하나를 표현하며
+앞의 것을 High Surrogate, 뒤의 것을 Low Surrogate라 한다.
+<br/>
+length 프로퍼티는 한국어(멀티 바이트 문자)도 한 문자로 카운트한다. 단, 특수한 예외가 있다는 점에 주의해야 한다.
+
+```javascript
+var msg = '💩싸';
+console.log(msg.length); // 결과 : 3
+```
+
+그냥 보기에는 문자가 두 문자지만 결과는 3이다. 여기서 한 문자가 증가한 것일까?<br/>
+
+결론부터 말하자면 이것은 '💩'이라는 그림 문자가 서로게이트 페어이기 때문에 발생하는 문제다. 일반적으로 Unicode(UTF-8)는 한 문자를 2바이트로 표현한다. 그러나 Unicode로 취급해야할 문자가 증가함에 따라 지금까지 2바이트로 표현할 수 있는 문자수(65535문자)로는 부족한 상황이 되었다. 그래서 일부의 문자를 4바이트로 표현함으로써 취급하는 문자수를 확장하게 되었다. 이것이 바로 서로게이트 페어다.<br/>
+
+단, length 프로퍼티는 서로게이트 페어를 식별할 수 없으므로 4바이트 = 2문자로 간주해 버린다. 앞의 예라면 '💩'이 2문자, '싸'가 1문자로 총 3문자가 된다. <br/>
+
+서로게이트 페어를 포함한 문자열을 올바로 카운트하려면 다음과 같은 코드를 작성한다.
+
+```javascript
+var msg = '💩싸';
+var len = msg.length;
+var num = msg.split(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g).length - 1;
+console.log(msg.length - num); // 결과 : 2
+```
+
