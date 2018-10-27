@@ -96,4 +96,25 @@ console.log(str2.length); // 결과 : 9(한국어도 1문자로 계산)
 ```
 이렇듯 String 객체의 멤버는 거의 대부분 이해할 수 있는 것들이다.
 
+<br/>
+
+### 부분 문자열을 추출할 때 두 가지 주의점
+---
+String 메소드는 원본 문자열로부터 부분적인 문자열을 추출하기 위한 메소드로, substring/slice/substr의 세 가지 메소드를 제공하고 있다. 그 중 substring/slice 메소드와 substr 메소드의 차이점은 아래와 같이 명료하다.
+
+* substring/slice 메소드 > 시작 위치 ~ 종료 위치의 범위로 추출 장소를 지정
+* substr 메소드 > 시작 위치로부터의 문자수 지정으로 추출 장소를 지정
+
+단, 위의 예제만으로는 이해하기 어려운 것이 substring과 slice 메소드의 차이점이다. 결과만을 봤을 때 둘 다 같은 기능을 제공하고 있는 듯 보이지만, 아래와 같은 조건 하에서는 서로 다른 동작을 하므로 주의하기 바란다.
+
+1. 인수 strat > 인수 end인 경우
+
+>이 경우 substring 메소드는 인수 strat와 인수 end와의 관계를 바꿔서 `end + 1 ~ start번째 문자`까지를 추출한다.
+>이에 반해 slice 메소드는 이러한 인수의 교환 없이 그대로 공백 문자열을 반환한다.
+
+```javascript
+var str = 'WINGS프로젝트';
+console.log(str.substring(8, 5)); // 프로젝 (6-8번째 문자열을 추출)
+console.log(str.slice(8, 5)); // 공백 문자열
+```
 
