@@ -52,3 +52,67 @@ console.log(Number.MAX_SAFE_INTEGER + 1); // 결과 : 9007199254740992
 console.log(Number.MAX_SAFE_INTEGER + 2); // 결과 : 9007199254740992 (부정)
 ```
 
+<br/>
+
+### 숫자형식을 변환하는 toXxxxx 메소드
+---
+toXxxxx 메소드는 각각 숫자를 지정 형식으로 변환하거나 특정의 행수로 정렬하기 위해서 사용한다. 
+
+```javascript
+var num1 = 255;
+console.log(num1.toString(16)); // 결과 : ff
+console.log(num1.toString(8)); // 결과 : 377
+
+var num2 = 123.45678;
+console.log(num2.toExponential(2)); // 결과 : 1.23e+2
+console.log(num2.toFixed(3)); // 결과 : 123.457
+console.log(num2.toFixed(7)); // 결과 : 123.4567800
+console.log(num2.toPrecision(10)); // 결과 : 123.4567800
+console.log(num2.toPrecision(6)); // 결과 : 123.457
+```
+
+toFixed 메소드는 소수점 이하의 행수를, toPrecision 메소드는 정수부도 포함한 전체 행수를 지정한다는 점을 주의하기 바란다.
+
+<br/><br/>
+
+### 문자열을 숫자로 변환하기
+---
+Javascript에서는 데이터형을 명시적으로 변환하기 위한 방법을 제공하고 있다. 데이터형을 명확하게 한 후에 처리하고 싶은 경우, 또는 변수의 내용이 본래부터 애매한 경우에는 명시적으로 데이터형을 변환함으로써 스크립트의 예상치 못한 동작을 미연에 방지할 수 있다. <br/>
+
+예를 들어 다음은 주어진 값을 숫자로 변환하는 parseFloat/parseInt 메소드, Number 함수의 예다. <br/>
+
+parseFloat/parseInt 메소드, Number 함수는 모두 '주어진 값을 숫자로 변환한다'는 공통점을 가지고 있다. 그러나 세부적인 동작은 미묘하게 차이가 있으므로 주의가 필요하다.
+
+```javascript
+(1)
+var n = '123xxx';
+console.log(Number(n)); // 결과 : NaN
+console.log(Number.parseFloat(n)); // 결과 : 123
+console.log(Number.parseInt(n)); // 결과 : 123
+
+
+(2)
+var d = new Date();
+console.log(Number(d)); // 결과 : 1486816983384
+console.log(Number.parseFloat(d)); // 결과 : NaN
+console.log(Number.parseInt(d)); // 결과 : NaN
+
+(3)
+var h = '0x10';
+console.log(Number(h)); // 결과 : 16
+console.log(Number.parseFloat(h)); // 결과 : 0
+console.log(Number.parseInt(h)); // 결과 : 16
+
+(4)
+var b = '0b11';
+console.log(Number(b)); // 결과 : 3
+console.log(Number.parseFloat(b)); // 결과 : 0
+console.log(Number.parseInt(b)); // 결과 : 0
+
+(5)
+var e = '1.01e+2';
+console.log(Number(e)); // 결과 : 101
+console.log(Number.parseFloat(e)); // 결과 : 101
+console.log(Number.parseInt(e)); // 결과 : 1
+
+```
