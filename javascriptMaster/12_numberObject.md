@@ -32,7 +32,7 @@ Number 객체는 숫자형(number)의 값을 취급하기 위한 래퍼 객체�
 <br/><br/>
 
 ### NUmber 객체의 상수
--
+---
 `POSITIVE_INFINITY`/`NEGATIVE_INFINITY`, `NaN`은 모두 특수한 수치(상수)를 나타낸다.
 
 `POSITIVE_INFINITY`/`NEGATIVE_INFINITY`(무한대)는 어떤 연산의 결과가 Javascript에서 표현 가능한 수치의 범위를 넘어섰을 경우의 반환값으로 사용된다. 한편 NaN(Not a Number: 수치가 아닌 값)은 예를 들어 '0을 0으로 나누기' 등의 부정한 연산이 실행되었을 경우, 수치로는 표현할 수 없는 결과를 나타내기 위해서 사용된다.
@@ -55,7 +55,7 @@ console.log(Number.MAX_SAFE_INTEGER + 2); // 결과 : 9007199254740992 (부정)
 <br/>
 
 ### 숫자형식을 변환하는 toXxxxx 메소드
--
+---
 toXxxxx 메소드는 각각 숫자를 지정 형식으로 변환하거나 특정의 행수로 정렬하기 위해서 사용한다. 
 
 ```javascript
@@ -135,7 +135,7 @@ console.log(Number.parseInt(e)); // 결과 : 1
 <br/><br/>
 
 ### 보충 : 산술 연산자에 의한 문자열 <-> 숫자의 변환
--
+---
 문자열 <-> 숫자의 변환에서는 산술 연산자 '+'와 '-'를 이용하는 것도 가능하다.
 
 ```javascript
