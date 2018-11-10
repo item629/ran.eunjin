@@ -1,5 +1,5 @@
 ## 심벌 작성하기
-ES2015에서는 지금까지의 String/Number/Boolean 등의 데이터형(객체)에 더하여, 새롭게 Symbol 이라는 형을 추가하였다. ==symbol== 이란 그 이름 그대로 심벌(물체의 이름)을 작성하기 위한 형이다. 그냥 보면 문자열과도 비슷한데, 문자열은 아니다. 우선 이 불가사의한 형인 symbol의 특징을 정리한 후 구체적인 용법에 대해 소개하겠다.
+ES2015에서는 지금까지의 String/Number/Boolean 등의 데이터형(객체)에 더하여, 새롭게 Symbol 이라는 형을 추가하였다. symbol 이란 그 이름 그대로 심벌(물체의 이름)을 작성하기 위한 형이다. 그냥 보면 문자열과도 비슷한데, 문자열은 아니다. 우선 이 불가사의한 형인 symbol의 특징을 정리한 후 구체적인 용법에 대해 소개하겠다.
 
 ### 심벌의 성질 이해하기
 ---
@@ -100,13 +100,81 @@ Math 객체에서 이용 가능한 멤버는 아래와 같다.
 
 | 멤버 | 개요 |
 |----|-----|
-| cell(num) | 소수점 이하 올림(num 이상의 최소 정수) |
+| ceil(num) | 소수점 이하 올림(num 이상의 최소 정수) |
 | floor(num) | 소수점 이하 버림(num 이하의 최대 정수) |
 | round(num) | 반올림 |
 | trunc(num) | 소수 부분을 단순히 버림(정수 부분을 취득) |
 
-- (3) 제곱근 (*는 읽기 전용)
+- (3) 제곱근 ( \*는 읽기 전용)
 
 | 멤버 | 개요 |
 |----|-----|
-| *SQRT1_2 | 1/2의 제곱근 |
+| \*SQRT1_2 | 1/2의 제곱근 |
+| \*SQRT2 | 2의 제곱근 |
+| sqrt(num) | 제곱근 |
+| cbrt(num) | 세제곱근 |
+| hypot(x1, x2, ...) | 인수의 제곱합의 제곱근 |
+
+- (4) 삼각함수
+
+| 멤버 | 개요 |
+|----|-----|
+| \*PI | 원주율 |
+| cos(num) | 코사인 |
+| sin(num) | 사인 |
+| tan(num) | 탄젠트 |
+| acos(num) | 아크 코사인 |
+| asin(num) | 아크 사인 |
+| atan(num) | 아크 탄젠트 |
+| atan2(y, x) | 2변수의 아크 탄젠트 |
+| cosh(num) | 쌍곡 코사인 |
+| sinh(num) | 쌍곡 사인 |
+| tanh(num) | 쌍곡 탄젠트 |
+| acosh(num) | 역쌍곡 코사인 |
+| asinh(num) | 역쌍곡 사인 |
+| atanh(num) | 역쌍곡 탄젠트 |
+
+- (5) 로그/지수함수
+
+| 멤버 | 개요 |
+|----|-----|
+| \*E |  자연 로그의 밍ㅌ에 해당하는 수학 상수. 2.718281828459045 |
+| \*LN2 | 2의 자연 로그 값 0.6931471805599453 |
+| \*LN10 | 10의 지연 로그 값. 2.302585092994046 |
+| \*LOG10E | 10을 밑으로 한 e의 로그. 0.4342944819032518 |
+| log(num) | 자연 로그 |
+| log10(num) | 밑을 10으로 하는 로그 |
+| log2(num) | 밑을 2으로 하는 로그 |
+| log1p(num) | 인수 x에 1을 더한 것의 자연 로그 |
+| exp(num) |  지수 함수(e의 거듭제곱) |
+| expm1(num) | e의 num제곱 - 1 |
+
+아래는 Math 객체의 주요 멤버를 이용한 예제다.
+
+```javascript
+console.log(Math.abs(-100)); // 결과 : 100
+console.log(Math.clz32(1)); // 결과 : 31
+console.log(Math.min(20, 40, 60)); // 결과 : 20
+console.log(Math.max(20, 40, 60)); // 결과 : 60
+console.log(Math.pow(5, 3)); // 결과 : 125
+console.log(Math.random)); // 결과 : 0.139327... (임의의 값)
+console.log(Math.sign(-100)); // 결과 : -1
+console.log(Math.ceil(-1234.56)); // 결과 : 1234
+console.log(Math.ceil(-1234.56)); // 결과 : -1234
+console.log(Math.floor(1234.56)); // 결과 : 1234
+console.log(Math.floor(-1234.56)); // 결과 : -1235
+console.log(Math.round(1234.56)); // 결과 : 1235
+console.log(Math.round(-1234.56)); // 결과 : -1235
+console.log(Math.trunc(1234.56)); // 결과 : 1234
+console.log(Math.trunc(-1234.56)); // 결과 : -1234
+console.log(Math.sqrt(81)); // 결과 : 9
+console.log(Math.cbrt(81)); // 결과 : 4.326748710922225
+console.log(Math.hypot(3, 4)); // 결과 : 5
+console.log(Math.cos(1)); // 결과 : 0.5403023058...
+console.log(Math.sin(1)); // 결과 : 0.841470984...
+console.log(Math.tan(1)); // 결과 : 1.557407724...
+console.log(Math.atan2(1, 3)); // 결과 : 0.321750554...
+console.log(Math.log(10)); // 결과 : 2.3025850929...
+console.log(Math.exp(3)); // 결과 : 20.0855369231...
+console.log(Math.expm1(1)); // 결과 : 1.718281828...
+```
