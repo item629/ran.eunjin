@@ -173,3 +173,38 @@ var ary = [];
 >console.log(ary1);
 >// 결과 : [ "Hio",  "Hio", "Kondo", "Kuge", "Ozawa", "Saitoh", "Saitoh"] 
 >```
+
+<br/>
+
+배열의 기본적인 사용법을 이해했으니 다음으로 위의 예제에서 미처 설명하지 못한 메소드에 대해서 보충 설명하겠다.
+
+<br/><br/>
+
+### 스택과 큐
+---
+push/pop/shift/unshift 메소드를 데이터 구조의 관점으로 보면, 좀 더 심도 있게 이해할 수 있다. 이 메소드를 이용함으로써 배열을 스택/큐로써 이용할 수 있게 된다.
+
+![Open in browser](./img/stack01.png)
+
+<br/>
+
+1. **스택**
+
+>**스택(Stack)**이란 <U>나중에 들어간 것이 먼저 나오는 구조(LIFO: Last In First Out)</U> 또는 <U>먼저 넣은 것이 나중에 나오는 구조(FILO:First In Last Out)</U>라 불리는 데이터 구조다. 예를 들어 애플리케이션에서 자주 등장하는 **Undo** 기능의 경우, 조작을 이력에 보관해서 마지막에 실행한 조작을 우선 추출한다. 이러한 용도의 조작에는 스택이 적합하다.
+> <br/><br/>
+>스택은 push/pop 메소드로 구현할 수 있다.
+
+```javascript
+var data = [];
+data.push(1);
+data.push(2);
+data.push(3);
+console.log(data.pop()); // 결과 : 3
+console.log(data.pop()); // 결과 : 2
+console.log(data.pop()); // 결과 : 1
+```
+<br/>
+
+2. **큐**
+
+>**큐(Queue)**란 <U>먼저 넣은 것이 먼저 나오는 구조(FIFO: First In First Out)</U>라고 불리는 데이터 구조다.
