@@ -34,4 +34,4 @@ console.log(members.sort(function(x, y) {
 }));
 ```
 
-![Open in browser](./img/foreach.png)
+![Open in browser](./img/members.png)
