@@ -296,3 +296,33 @@ arrayWalk(
 ---
 <br/>
 다음은 이러한 콜백 함수계의 메소드 중에서도 자주 이용하는 forEach/map/some/filter 메소드에 대해서 예를 들어 보겠다.
+
+1. **배열의 내용을 순서대로 처리하기 - forEach 메소드 -**
+> forEach 메소드는 지정한 함수로 배열 내의 요소를 순서대로 처리하기 위한 메소드다.
+
+```javascript
+array.forEach(callback [,that])
+	array : 배열 객체
+	callback : 개별 요소를 처리하기 위한 함수
+	that : 함수 callback 안에서 this가 나타내는 객체
+```
+
+예를 들어 다음은 배열의 내용을 제곱한 결과를 순서대로 로그 표시하는 예다.
+
+```javascript
+var data = [2, 3, 4, 5]l
+data,forEach(function(value, index, array) {
+	console.log(value * value) // 결과 : 4, 9, 16, 25
+});
+```
+
+forEach 메소드에서는 배열의 요소를 순서대로 추출하여 사용자 정의 함수 callback에 건넨다. 건네진 값을 함수 callback이 처리하는 것이다. 따라서 함수 callback측에서는 배열의 정보를 받아 들일 수록 다음의 인수를 지정해두어야 한다.
+
+- 제1인수 value = 요소의 값
+- 제2인수 index = 인덱스 번호
+- 제3인수 array = 원래의 배열
+
+
+위와 같은 예라면, 인수 value를 제공한 결과를 로그로 출력하게 된다. 인수 index/array는 이용하지 않으므로 생략해도 상관없다.
+
+![Open in browser](./img/foreach.png)
