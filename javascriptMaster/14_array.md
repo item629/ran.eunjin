@@ -131,20 +131,20 @@ var ary = [];
 >console.log(Array.isArray(ary1)); // 결과 : true
 >console.log(ary1.toString()); // 결과 : Sato, Takae, Osada, Hio, Saitoh, Sato
 >console.log(ary1.indexOf('Sato')); // 결과 : 0
->console.log(ary1.lastIndexOd('Sato')); // 결과 : 5
+>console.log(ary1.lastIndexOf('Sato')); // 결과 : 5
 >
 >console.log(ary1.concat(ary2));
 >// 결과 : ["Sato", "Takae", "Osada", "Hio", "Saitoh", "Sato", "Yabuki", "Aoki", "Moriyama" "Yamada"]
 >
 >console.log(ary1.join('/')); // 결과 : Sato/Takae/Osada/Hio/Saitoh/Sato
 >console.log(ary1.slice(1)); 
->// 결과 : ["Sato", "Takae", "Osada", "Hio", "Saitoh", "Sato"]
+>// 결과 : ["Takae", "Osada", "Hio", "Saitoh", "Sato"]
 >console.log(ary1.slice(1, 2)); // 결과 :  ["Takae"]
->console.log(ary1.splice(1. 2, 'kakeya', 'yamaguchi'));
+>console.log(ary1.splice(1, 2, 'kakeya', 'yamaguchi'));
 >// 결과 :  ["Takae", "Osada"] (치환 대상의 요소를 취득)
 >console.log(ary1);
 >// 결과 :  ["Sato", "Kakeya", "Yamaguchi", "Hio", "Saitoh", "Sato"] (치환 후의 배열)
->console.log(Array.od(20,40,60)); // 결과 : [ 20, 40, 60]
+>console.log(Array.of(20,40,60)); // 결과 : [ 20, 40, 60]
 >console.log(ary1.copyWithin(1, 3, 5));
 >// 결과 :  ["Sato", "Hio", "Saitoh", "Hio", "Saitoh", "Sato"] (4~5번째 요소를 2~3번째의 위치에 복사)
 >console.log(ary1);
@@ -156,7 +156,7 @@ var ary = [];
 > 
 > console.log(ary1.pop()); // 결과 : Sato (삭제한 요소)
 >console.log(ary1); // 결과 : ["Sato", "Hio", "Saitoh", "Hio", "Saitoh"] (삭제한 후의 배열)
->console.log(ary1.push('kondo')); // 결과 : 6 (추가한 후의 요소 수)
+>console.log(ary1.push('Kondo')); // 결과 : 6 (추가한 후의 요소 수)
 >console.log(ary1); // 결과 :  ["Sato", "Hio", "Saitoh", "Hio", "Saitoh", "Kondo"] (추가한 후의 배열)
 >console.log(ary1.shift()); // 결과 : Sato(삭제한 요소)
 >console.log(ary1); // 결과 : ["Hio", "Saitoh", "Hio", "Saitoh", "Kondo"] (삭제한 후의 배열)
