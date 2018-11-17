@@ -224,3 +224,37 @@ cosnole.log(data.shift()); // 결과 : 3
 <br/><br/>
 
 ### # 배열에 여러 요소를 추가/치환/삭제하기 - splice 메소드
+---
+splice 메소드는 배열의 임의의 부분에 요소를 추가하거나 기존의 요소를 치환하거나 삭제하는 조작을 실시한다. 여러 기능이 있으므로 좀 복잡하게 생각될지도 모르겠지만 침착하게 살펴보도록 하자. 
+
+```javascript
+array.splice(index, many [,elem1 [,elem2, ...]])
+	array : 배열객체	index : 요소의 추출 시작 위치
+	many : 추출 요소 수	elem1, elem2... : 삭제 부분에 삽입할 요소
+```
+
+> pop/push/shift/unshift 메소드 등과 동일하게 splice 메소드는 원래의 배열에 영향을 준다. 또한 원래의 배열에서 삭제된 요소(군)를 반환값으로 되돌린다.
+
+그 외의 인수와 동작에 대해서는 다음의 예에서 자세히 살펴보자.
+
+```javascript
+var data = ['Sato', 'Takae', 'Osada', 'Hio', 'Saitoh'];
+console.log(data.splice(3, 2, 'Yamada', 'Suzuki')); // 1
+	// 결과 : ["Hio", "Saitoh"]
+console.log(data);
+	// 결과 : ["Sato", "Takae", "Osada", "Yamada", "Suzuki"]
+console.log(data.splice(3, 2)); // 2
+	// 결과 : ["Yamada", "Suzuki"]
+console.log(data);
+	// 결과 : ["Sato", "Takae", "Osada"]
+console.log(data.splice(1, 0, 'Tanaka')); // 3
+	// 결과 : []
+console.log(data);
+	// 결과 : ["Sato", "Tanaka", "Takae", "Osada"]
+```
+
+**1** 은 가장 단순한 처리다. 4~5번째 요소를 지정된 요소로 치환한다. 치환 전의 요소와 치환 후의 요소 개수는 반드시 일치하지 않아도 괜찮다. 
+
+**2** 와 같이 치환 후의 요소(인수 elem1, elem2...)를 지정하지 않은 경우에는 '지정된 범위의 요소를 삭제한다'는 의미가 된다.
+
+반대로 **3** 과 같이 치환해야 할 요소 수(인수 many)를 0으로 한 경우에 '인수 index로 지정된 위치에 요소를 삽입한다'는 의미가 된다.
