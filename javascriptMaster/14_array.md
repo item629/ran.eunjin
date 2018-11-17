@@ -75,7 +75,9 @@ var ary = [];
 |3|slice(start [,end])|start + 1~ end번째의 요소를 빼냄|
 |4|\*splice(start, cnt [,rep [,...]])|배열 내의 start + 1 ~ start + cnt번째의 요소를 rep, ...로 치환|
 |5|from(alike [,map [,othis]])|배열과 비슷한 종류의 객체와 열거 가능한 객체를 배열로 변환(정적 메소드)|
-
+|6|of(e1, ...)|가변길이 인수를 배열에 변환(정적 메소드)|
+|7|\*copyWithin(target, start [,end])|start + 1 ~ end번째의 요소를 target + 1번째 위치부터 복사(요소 수는 원래와 변함 없음)|
+|8|fill(var [,start [,end]])|배열 내의 start + 1 ~ end번째의 요소를 var로 치환|
 
 3. 추가/삭제
 
