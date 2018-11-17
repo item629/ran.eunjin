@@ -118,3 +118,26 @@ var ary = [];
 
 ![Open in browser](./img/array011.png)
 ![Open in browser](./img/array022.png)
+
+<br/><br/>
+
+> **array**<br/>
+> 
+>```javascript
+>var ary1 = ['Sato', 'Takae', 'Osada', 'Hio', 'Saitoh', 'Sato'];
+>var ary2 = ['Yabuki', 'Aoki', 'Moriyama', 'Yamada'];
+>
+>console.log(ary1.length); // 결과 : 6
+>console.log(Array.isArray(ary1)); // 결과 : true
+>console.log(ary1.toString()); // 결과 : Sato, Takae, Osada, Hio, Saitoh, Sato
+>console.log(ary1.indexOf('Sato')); // 결과 : 0
+>console.log(ary1.lastIndexOd('Sato')); // 결과 : 5
+>
+>console.log(ary1.concat(ary2));
+>// 결과 : ["Sato", "Takea", "Osada", "Hio", "Saitoh", "Sato", "Yabuki", "Aoki", "Moriyama" "Yamada"]
+>
+>console.log(ary1.join('/')); // 결과 : Sato/Takea/Osada/Hio/Saitoh/Sato
+>console.log(ary1.slice(1)); 
+>// 결과 : ["Sato", "Takea", "Osada", "Hio", "Saitoh", "Sato"]
+>console.log(ary1.slice(1, 2)); // 결과 :  ["Takea"]
+>```
