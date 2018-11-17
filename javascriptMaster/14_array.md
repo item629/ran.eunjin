@@ -186,9 +186,11 @@ push/pop/shift/unshift 메소드를 데이터 구조의 관점으로 보면, 좀
 
 ![Open in browser](./img/stack01.png)
 
+\* 위의 사진에서 스택의 결과물은 문어가 아닌 '게'입니다. 
+
 <br/>
 
-1. **스택**
+**(1) 스택**
 
 >**스택(Stack)** 이란 <U> **나중에 들어간 것이 먼저 나오는 구조(LIFO: Last In First Out)** </U> 또는 <U> **먼저 넣은 것이 나중에 나오는 구조(FILO:First In Last Out)** </U> 라 불리는 데이터 구조다. 예를 들어 애플리케이션에서 자주 등장하는 **Undo** 기능의 경우, 조작을 이력에 보관해서 마지막에 실행한 조작을 우선 추출한다. 이러한 용도의 조작에는 스택이 적합하다.
 > <br/><br/>
@@ -205,7 +207,7 @@ console.log(data.pop()); // 결과 : 1
 ```
 <br/>
 
-2. **큐**
+**(2) 큐**
 
 >**큐(Queue)** 란 <U> **먼저 넣은 것이 먼저 나오는 구조(FIFO: First In First Out)** </U> 라고 불리는 데이터 구조다. 처음에 들어간 요소를 처음에 처리하는(꺼내는) 흐름이 창구에서 서비스를 기다리는 모습과 닮아있어 **대기 행렬** 이라고도 부른다.
 ><br/><br/>
@@ -297,7 +299,12 @@ arrayWalk(
 <br/>
 다음은 이러한 콜백 함수계의 메소드 중에서도 자주 이용하는 forEach/map/some/filter 메소드에 대해서 예를 들어 보겠다.
 
-1. **배열의 내용을 순서대로 처리하기 - forEach 메소드 -**
+<br/>
+
+**(1) 배열의 내용을 순서대로 처리하기 - forEach 메소드 -**
+
+---
+
 > forEach 메소드는 지정한 함수로 배열 내의 요소를 순서대로 처리하기 위한 메소드다.
 
 ```javascript
@@ -329,6 +336,96 @@ forEach 메소드에서는 배열의 요소를 순서대로 추출하여 사용�
 
 콜백계의 메소드에서는 대부분의 메소드가 기본이 되는 조작을 제공하고(여기에서는 배열의 요소를 순서대로 추출하기), 그 범위 안에서 어떠한 가공/연산을 실시할지는 사용자 정의 함수로 정의(여기에서는 로그에 출력하기)하는 식의 역할 분담이 기본이다.
 
+<br/>
 
+**(2) 배열을 지정된 규칙으로 가공하기 - map 메소드 -**
 
-<br/><br/>
+---
+
+map 메소드를 이용함으로써 배열을 지정된 함수로 가공할 수 있다.
+
+```javascript
+array.map(callback [,that])
+	array : 배열 객체
+	callback : 개별 요소를 처리하기 위한 함수
+	that : 함수 callback 안에서 this가 나타내는 객체
+```
+
+함수 callback이 취하는 인수는 forEach 메소드의 경우와 동일하다. 단, 이번에는 반환값으로써 가공한 결과를 반환해야 한다.
+
+예를 들어 다음은 배열 내의 요소를 제곱한 결과를 새로운 배열로 취득한다.
+
+```javascript
+var data = [2, 3, 4, 5];
+var result = data.map(function(value, index, array) {
+	return value * value;
+});
+
+console.log(result); // 결과 : [4, 9 ,16, 25]
+```
+
+forEach 와 비교했을 때 가공한 결과를 콜백 함수의 반환값(return)으로 되돌리고 있다는 점에 주목해야 한다. map 메소드에서는 함수 callback으로부터의 반환값을 모아서 새로운 배열을 작성하고 있다.
+
+<br/>
+
+**(3) 배열에 조건이 일치하는 요소가 존재하는지 확인하기 - some 메소드 -**
+
+---
+
+some 메소드는 지정된 함수로 각각의 요소를 판정해 하나라도 조건에 일치하는 요소가 있다면 true를 반환한다.
+
+```javascript
+array.some(callback [,that])
+	array : 배열 객체
+	callback :  개별 요소를 처리하기 위한 함수
+	that : 함수 callback 안에서 this가 나타내는 객체
+```
+
+함수 callback이 취하는 인수는 forEach/map 메소드의 경우와 동일하다. 단, 이번에는 반환값으로써 요소가 조건에 일치했는지 여부를 true/false로 반환할 필요가 있다.
+
+예를 들어 다음은 배열 내에 3의 배수가 하나라도 포함되어 있는지를 판정하는 예다.
+
+```javascript
+var data = [4, 9, 16, 25];
+var result = data.some(function(value, index, array) {
+	return value % 3 === 0;
+});
+
+if (result) {
+	console.log('3의 배수가 발견되었습니다');
+} else {
+	console.log('3의 배수를 찾을 수 없었습니다');
+}
+```
+
+인수 value를 3으로 나누어서 나머지가 0인 경우는 3의 배수로 간주한다. 나머지 연산자 '%'를 이용한 이러한 판정은 자주 사용되는 것이므로 잘 기억해두길 바란다. 
+
+some과 아주 비슷한 연산자로 every 메소드도 있다. some 메소드가 '하나라도 조건이 일치하는지'(함수 callback이 한 번이라도 true를 반환하는가)를 판정하는 데 비해, every 메소드는 '모든 요소가 조건에 일치하는가'(함수 callback이 모두 true를 반환하는가)를 판정한다. 
+
+<br/>
+
+**(4) 배열의 내용을 특정의 조건으로 필터링 - filter 메소드 -**
+
+---
+
+filter 메소드는 지정된 함수에서 개별 요소를 판정하여 조건에 일치한 요소만을 추출한다.
+
+```javascript
+array.filter(callback [,that])
+	array : 배열 객체
+	callback :  개별 요소를 처리하기 위한 함수
+	that : 함수 callback 안에서 this가 나타내는 객체
+```
+
+인수 callback의 규칙은 some/every 메소드의 경우와 동일하므로 곧바로 예를 살펴보자. 다음은 배열 data로부터 홀수만 추출하는 예다.
+
+```javascript
+var data = [4, 9, 16 ,25];
+var result = data.filter(function(value, index, array) {
+	return value % 2 === 1;
+});
+
+console.log(result); // 결과 : [9, 25]
+```
+'%'연산자의 사용법은 앞서 나타낸 예와 같다. 2로 나누어서 나머지가 1이라면 홀수다(짝수를 구한다면 나머지가 0인 것을 확인한다). 함수 callback이 true를 반환하는 경우에만 그때의 요소를 결과 배열로 반환하는 것이 filter 메소드의 열학이다.
+
