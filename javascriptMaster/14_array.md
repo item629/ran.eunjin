@@ -158,5 +158,18 @@ var ary = [];
 >console.log(ary1); // 결과 : ["Sato", "Hio", "Saitoh", "Hio", "Saitoh"] (삭제한 후의 배열)
 >console.log(ary1.push('kondo')); // 결과 : 6 (추가한 후의 요소 수)
 >console.log(ary1); // 결과 :  ["Sato", "Hio", "Saitoh", "Hio", "Saitoh", "Kondo"] (추가한 후의 배열)
+>console.log(ary1.shift()); // 결과 : Sato(삭제한 요소)
+>console.log(ary1); // 결과 : ["Hio", "Saitoh", "Hio", "Saitoh", "Kondo"] (삭제한 후의 배열)
+>console.log(ary1.unshift('Ozawa', 'Kuge')); // 결과 : 7 (추가한 후의 요소 수)
+>console.log(ary1); 
+>// 결과 : ["Ozawa", "Kuge", "Hio", "Saitoh", "Hio", "Saitoh", "Kondo"] (추가한 후의 배열)
 >
+>console.log(ary1.reverse()); 
+>// 결과 : ["Kondo", "Saitoh", "Hio", "Saitoh", "Hio", "Sato", "Kuge", "Ozawa"] (반전 후의 배열)
+>console.log(ary1);
+>// 결과 : ["Kondo", "Saitoh", "Hio", "Saitoh", "Hio", "Sato", "Kuge", "Ozawa"] 
+>console.log(ary1.sort()); 
+>// 결과 : [ "Hio",  "Hio", "Kondo", "Kuge", "Ozawa", "Saitoh", "Saitoh"] (정렬 후의 배열)
+>console.log(ary1);
+>// 결과 : [ "Hio",  "Hio", "Kondo", "Kuge", "Ozawa", "Saitoh", "Saitoh"] 
 >```
