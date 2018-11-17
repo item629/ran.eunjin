@@ -105,3 +105,16 @@ var ary = [];
 |4|some(fnc [,that])|일부 배열 내의 요소가 조건 fnc에 일치하는가|
 |5|filter(fnc [,that])|조건 fnc에 일치한 요소로 배열을 생성|
 |6|find(fnc [,that])|함수 fnc가 처음 true를 반환한 요소를 취득|
+|7|findIndex(fnc [,that])|함수 fnc가 처음 true를 반환한 요소의 인덱스 번호를 취득|
+|8|reduce(fnc [,init])|바로 옆의 두 요소를 왼쪽부터 오른쪽의 함수 fnc로 처리하여 단일 값으로 한다(인수 init는 초기값)|
+|9|reduceRight(fnc [,init])|바로 옆의 두 요소를 오른쪽부터 왼쪽으로 함수 fnc로 처리하여 단일 값으로 한다(인수 init는 초기값)|
+
+<Br/>
+
+> **파괴적인 메소드**<br/>
+> 파괴적인 메소드란 그 실행에 의해 객체(여기서는 배열) 그 자체에 변경을 미치는 메소들 말한다. 예를 들어 reverse/sort 등의 메소드는 반환값이 정렬 후의 배열을 반환하는데, 원래의 배열도 정렬되므로 주의가 필요하다.
+
+<br/>
+
+![Open in browser](./img/array011.png)
+![Open in browser](./img/array022.png)
