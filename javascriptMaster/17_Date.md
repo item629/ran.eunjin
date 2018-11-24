@@ -154,3 +154,37 @@ console.log(Date.parse('2016/11/05')); // 결과 : 1478271600000
 console.log(Date.UTC(2016, 11, 5)); // 결과 : 1480896000000
 console.log(Date.now()); // 결과 : 1543045135304
 ```
+
+
+<Br/><br/>
+
+## 날짜/시간 값을 가산/감산하기
+
+Date 객체에는 날짜/시간을 직접 가산/감산하기 위한 메소드가 준비되어 있지 않다.
+
+getXxxxx 메소드로 개별 날짜/시간 요소를 추출해 가산/감산한 결과를 setXxxxx로 다시 설정하는 절차가 필요하다. 
+
+구체적인 예로 다음의 코드를 살펴보자. 
+
+```javascript
+var dat = new Date(2017, 4, 15, 11, 40);
+console.log(dat.toLocaleString()); // 결과 : 2017. 5. 15. 오전 11:40:00
+dat.setMonth(dat.getMonth() + 3); // 3개월을 가산
+console.log(dat.toLocaleString()); // 결과 : 2017. 8. 15. 오전 11:40:00
+dat.setDate(dat.getDate() - 20); // 20일을 감산 (1)
+console.log(dat.toLocaleString()); // 결과 : 2017. 7. 26. 오전 11:40:00
+```
+
+(1)과 같이 특정 요소에 대한 덧셈과 뺄셈의 결과가 유효 범위를 넘어버린 경우에도 Date 객체는 올바른 날자로 자동 계산을 해주기 때문에 염려할 필요가 없다. 이 경우는 '15 - 20 = -5'이지만 Date 객체가 이전 달로 거슬러 올라가 올바른 날자로 만들어준다.
+
+참고로 Date 객체의 이러한 성질을 이용함으로써 그 달의 마지막 날을 구할 수도 있다.
+
+```javascript
+var dat = new Date(2017, 4, 15, 11, 40);
+console.log(dat.toLocaleString()); // 결과 : 2017. 5. 15. 오전 11:40:00
+dat.setMonth(dat.getMonth() + 1); // 다음 달의 ...
+dat.setDate(0); // 0일째를 세트
+console.log(dat.toLocaleString()); // 결과 : 2017. 5. 31. 오전 11:40:00
+```
+
+이렇듯 '다음 달의 0일째'는 Date 객체에서 이 달의 마지막 날로 인식된다.
