@@ -124,5 +124,33 @@ console.log(dat.getMilliseconds()); // 결과 : 999
 console.log(dat.getTime()); // 결과 : 1482633435999
 console.log(dat.getTimezoneOffset()); // 결과 : -540
 
+console.log(dat.getUTCFullYear()); // 결과 : 2016
+console.log(dat.getUTCMonth()); // 결과 : 11
+console.log(dat.getUTCDate()); // 결과 : 25
+console.log(dat.getUTCDay()); // 결과 : 0
+console.log(dat.getUTCHours()); // 결과 : 2
+console.log(dat.getUTCMinutes()); // 결과 : 37
+console.log(dat.getUTCSeconds()); // 결과 : 15
+console.log(dat.getUTCMilliseconds()); // 결과 : 999
 
+var dat2 = new Date();
+dat2.setFullYear(2017);
+dat2.setMonth(7);
+dat2.setDate(5);
+dat2.setHours(11);
+dat2.setMinutes(37);
+dat2.setSeconds(15);
+dat2.setMilliseconds(513);
+
+console.log(dat2.toLocaleString()); // 결과 : 2017. 8. 5. 오전 11:37:15
+console.log(dat2.toUTCString()); // 결과 : Sat, 05 Aug 2017 02:37:15 GMT
+console.log(dat2.toDateString()); // 결과 : Sat Aug 05 2017
+console.log(dat2.toTimeString()); // 결과 : 11:37:15 GMT+0900 (한국 표준시)
+console.log(dat2.toLocaleDateString()); // 결과 : 2017. 8. 5.
+console.log(dat2.toLocaleTimeString()); // 결과 : 오전 11:37:15
+console.log(dat2.toJSON()); // 결과 : 2017-08-05T02:37:15.513Z
+
+console.log(Date.parse('2016/11/05')); // 결과 : 1478271600000
+console.log(Date.UTC(2016, 11, 5)); // 결과 : 1480896000000
+console.log(Date.now()); // 결과 : 1543045135304
 ```
