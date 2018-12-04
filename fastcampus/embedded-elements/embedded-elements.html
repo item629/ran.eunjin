@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <title>임베디드(Embeded) 요소들</title>
+</head>
+<body>
+
+  <!--
+
+    <img> 요소
+      - HTML 문서에 이미지를 포함(링크)
+
+      [속성]
+      src    - 이미지 파일 경로 설정
+      alt    - 이미지 대체 텍스트 설정
+      width  - 이미지 너비 설정
+      height - 이미지 높이 설정
+      usemap - 이미지 맵 연결 설정
+
+
+    <picture> 요소
+      - 0개 이상의 <source> 요소와 1개 이상의 <img>를 포함하는 컨테이너 요소.
+        다양한 스크린 환경에 맞는 적합한 이미지를 제공하기 위한 목적으로 사용.
+        <source> 요소를 사용할 수 없을 경우, <img> 요소가 화면에 표시.
+
+        [사용 예시]
+        media 속성:
+        <picture>
+          <source srcset="bamboo-pen.png" media="(min-width: 600px)">
+          <img src="bamboo-pen-narrow.png" alt="Bamboo Pen">
+        </picture>
+
+        type 속성:
+        <picture>
+          <source srcset="bamboo-pen.svg" type="image/svg+xml">
+          <img src="bamboo-pen-narrow.png" alt="Bamboo Pen">
+        </picture>
+
+
+    <source> 요소
+      - <picture>, <audio>, <video> 요소의 다중 미디어 리소스를 지정하기 위해 사용.
+
+        [사용 예시]
+        <video src="videofile.mp4" poster="posterimage.jpg" controls>
+          <source src="videofile.webm" type="video/webm">
+          <source src="videofile.ogg" type="video/ogg">
+          <source src="videofile.mov" type="video/quicktime">
+          HTML5 <code>video</code> 요소를 지원하지 않는 구형 웹 브라우저를 사용 중입니다.
+          <a href="http://outdatedbrowser.com/ko">최신형 브라우저로 업데이트</a> 하세요.
+        </video>
+
+
+    <video> 요소
+      - 동영상 콘텐츠를 HTML 문서에 포함하기 위해서 사용.
+        src 속성이나 <source> 요소을 이용해 여러 개의 동영상 소스 중 하나를 표시.
+
+        [사용 예시]
+        <video src="videofile.mp4" poster="posterimage.jpg">
+          HTML5 <code>video</code> 요소를 지원하지 않는 구형 웹 브라우저를 사용 중입니다.
+          <a href="http://outdatedbrowser.com/ko">최신형 브라우저로 업데이트</a> 하세요.
+        </video>
+
+        [속성]
+        src      - 비디오 파일 경로
+        poster   - 포스터 이미지 경로
+        preload  - 사용자 경험 향상(메타데이터 / 비디오 다운로드)에 관한 설정 [none, metadata, auto]
+        controls - 재생 컨트롤 표시 설정
+        autoplay - 자동 재생 설정
+        loop     - 반복 설정
+        muted    - 음소거 설정
+
+
+    <audio> 요소
+      - 동영상 콘텐츠를 포함하기 위해서 사용.
+        src속성이나 <source> 요소을 이용해 여러개의 동영상 소스를 표시.
+
+        [사용 예시]
+        <audio src="audiofile.mp3">
+          HTML5 <code>audio</code> 요소를 지원하지 않는 구형 웹 브라우저를 사용 중입니다.
+          <a href="http://outdatedbrowser.com/ko">최신형 브라우저로
+          업데이트</a>로 업데이트 하세요.
+        </audio>
+
+        [속성]
+        src      - 오디오 파일 경로
+        volume   - 볼륨 조절(0.0 ~ 1.0)
+        muted    - 음소거 설정
+        poster   - 포스터 이미지 경로
+        preload  - 사용자 경험 향상(메타데이터 / 비디오 다운로드)에 관한 설정 [none, metadata, auto]
+        controls - 재생 컨트롤 표시 설정
+        autoplay - 자동 재생 설정
+        loop     - 반복 설정
+
+
+    <track> 요소
+      - 비디오/오디오 재생 시, 자막을 표시.
+        default 속성을 설정하지 않을 경우, 자막 사용 안함 됨
+
+      [사용 예시]
+      <video src="videofile.mp4" poster="posterimage.jpg">
+        <track kind="subtitles" src="videofile.ko.vtt" srclang="ko" label="한국어" default>
+        <track kind="subtitles" src="videofile.en.vtt" srclang="en" label="English">
+      </video>
+
+      <audio src="audiofile.mp3">
+        <track kind="subtitles" src="audiofile.ko.vtt" srclang="ko" label="한국어">
+        <track kind="subtitles" src="audiofile.en.vtt" srclang="en" label="English">
+      </audio>
+
+
+    <iframe> 요소
+      - 인라인 프레임(Inline Frame)에 다른 HTML 페이지를 포함하여 화면에 표시.
+
+      [사용 예시]
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/0wlXaHmmOVc?rel=0&amp;showinfo=0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12643.636820892792!2d127.01610674058901!3d37.60429582641849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbc91e5ca4f03%3A0x18820a16e406c8ea!2z7ISc7Jq47Yq567OE7IucIOyEseu2geq1rCDquLjsnYwx64-ZIDUzMC0zNg!5e0!3m2!1sko!2skr!4v1520001155674" width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen></iframe>
+
+      [속성]
+      src             - 프레임 소스 설정
+      width           - 프레임 너비 설정
+      height          - 프레임 높이 설정
+      allowfullscreen - 프레임 전체화면 설정
+
+
+    <map> 요소
+      - 이미지 맵(클릭 가능한 링크 영역)을 정의하기 위해 <area>와 함께 사용됨.
+
+      [사용 예시]
+      <img src="products-map.jpg" alt="제품 모음" usemap="#products-map">
+      <map name="products-map">
+        <area
+          shape="circle"
+          coords="200,250,25"
+          hreflang="en-GB"
+          href="another.html"
+          alt="Another Page"
+          target="_blank">
+      </map>
+
+
+    <area> 요소
+      - 이미지의 핫스팟 지역 정의, 하이퍼링크 설정. <map> 내부에서만 사용 가능.
+
+      [속성]
+      shape    - 핫스팟 모양 설정
+      coords   - 모양의 좌표 값 설정
+      href     - 하이퍼링크 주소 설정
+      target   - 새 창(탭) 열림 설정
+      alt      - 대체 텍스트 설정
+      hreflang - 연결된 페이지의 언어 속성 설정
+      download - canvas 데이터 다운로드 설정
+
+
+    <svg> 요소
+      - 확장가능한 벡터 그래픽(SVG)은 2차원의 벡터 그래픽을 기술하기 위한 XML 마크업 언어.
+
+      [예시 코드]
+
+      <img src="svgfile.svg" alt="SVG File">
+
+      <svg width="150" height="150" viewBox="0 0 150 150">
+        <circle r="50" cx="75" cy="75" fill="#333" stroke="#900" stroke-width="4" />
+      </svg>
+
+
+  -->
+
+
+  <!-- img + picture + source -->
+  <picture>
+    <source srcset="media/image/kitten-large.png" type="image/png" media="(min-width: 900px)" />
+    <source srcset="media/image/kitten-medium.png" type="image/png" media="(min-width: 600px)" />
+    <img src="media/image/kitten-small.png" alt="웃는 고양이" />
+  </picture>
+
+  <!-- video + source + track -->
+  <video src="media/video/holzweiler.mp4" poster="media/video/holzweiler-short_cover.png"
+  controls loop="true" autoplay="true" muted="true">
+    HTML5 <code>video</code> 요소를 지원하지 않는 구형 웹 브라우저를 사용 중입니다. <a href="http://outdatedbrowser.com/ko">최신형 브라우저로 업데이트</a> 하세요.
+  </video>
+
+
+  <!-- audio -->
+  <figure style="margin: 0;">
+    <img src="media/audio/tobu-Itro_Cloud9--cover.jpg" alt="tobu-Itro_Cloud9" width="300" height="300">
+    <figcaption>
+      <audio src="media/audio/tobu-Itro_Cloud9.mp3" controls="true" autoplay="true">
+        HTML5 <code>video</code> 요소를 지원하지 않는 구형 웹 브라우저를 사용 중입니다. <a href="http://outdatedbrowser.com/ko">최신형 브라우저로 업데이트</a> 하세요.
+      </audio>
+    </figcaption>
+  </figure>
+
+
+  <!-- video + track -->
+  <video src="media/video/The temperature of dating.mp4" controls>
+    <track 
+    kind="subtitles" 
+    src="media/video/vtt/The temperature of dating.ko.vtt" 
+    srclang="ko"
+    label="한국어"
+    default>
+    </track>
+    <track 
+    kind="subtitles" 
+    src="media/video/vtt/The temperature of dating.en.vtt" 
+    srclang="en"
+    label="영어">
+    </track>
+    <track 
+    kind="subtitles" 
+    src="media/video/vtt/The temperature of dating.ja.vtt" 
+    srclang="ja"
+    label="일본어">
+    </track>
+  </video>
+
+
+  <!-- iframe -->
+  <!--
+    유투브(Youtube): https://goo.gl/hF6Wds75rjg
+    구글 맵(Google Map): https://goo.gl/Ps5p7f
+  -->
+
+  <iframe 
+  style="border: 0;" 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/jgJ_LaZLInE" 
+  allowfullscreen></iframe>
+
+  <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5226.621241943971!2d127.00142081090902!3d37.57648697910532!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2e2c8102391%3A0x51d36941638dd458!2sDobbit!5e0!3m2!1sko!2skr!4v1543887128484" 
+  width="600" 
+  height="450" 
+  style="border:0" 
+  allowfullscreen>
+  </iframe>
+
+
+  <!-- map + area -->
+  <!--
+    이미지 맵 좌표 생성: https://www.image-map.net/
+    우리나라 길거리 음식도감: http://www.typographyseoul.com/news/detail/404
+    https://www.google.co.kr/search?q=컵+솜사탕
+    https://www.google.co.kr/search?q=핫도그
+  -->
+  <img
+    usemap="#foods-in-kr" 
+    src="media/image/food-in-korea-of-republic.jpg" 
+    alt="우리나라 길거리 음식 도감">
+  <map name="foods-in-kr">
+    <area shape="rect" 
+    coords="0, 0, 100, 100" 
+    href="http://www.typographyseoul.com/news/detail/404" 
+    alt="어묵바">
+  </map>
+
+
+  <!-- SVG -->
+  <img src="media/image/bang-olufsen.svg" alt="bang"
+  width="150"
+  height="150">
+
+  <svg width="150" heigth="150">
+    <circle cx="75" cy="75" r="40" />
+    <circle cx="75" cy="75" r="20" fill="#ff0" />
+  </svg>
+
+
+</body>
+</html>
